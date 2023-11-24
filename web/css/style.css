@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.centered {
+    text-align: center;
+}
+
+.photo-title {
+    font-size: 150%;
+    text-decoration: underline;
+    font-family: 'Cookie', cursive;
+}
+
+.photo-block {
+    border: 1px solid rgb(233, 233, 233);
+    margin: 1%;
+    border-radius: 10px;
+}
+
+.photo-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+#gallery-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.form-block label {
+    display: block;
+}
+
+.form-block {
+    margin-bottom: 1%;
+}
+
+.dark {
+    background-color: rgb(54, 54, 54);
+    color:rgb(233, 233, 233);
+}
+
+.dark a {
+    color: aquamarine;
+}
+
+.dark input, select, textarea {
+    background-color: rgb(83, 83, 83) !important;
+    border: 1px solid black !important;
+    color: white !important;
+}
+
+.dark input:focus, select:focus, textarea:focus {
+    background-color: rgb(110, 109, 109);
+    color: white;
+}
+
+div.card {
+    background-color: rgb(109, 109, 109);
+    color: white;
+    margin-bottom: 2.5%;
+}
+
+#page-header {
+    margin-bottom: 2%;
+}
+
+button[type="submit"] {
+    margin-top: 1.5%;
+}
+
+a.linkphoto {
+    text-decoration: none;
+}
+
+img.profile-picture {
+    max-width: 20px;
+    /*border-radius: 50%;*/
+}
+
+.dark .toast {
+    background-color: rgb(88, 88, 88);
+    color: white;
+}
+
+.dark .toast-header {
+    background-color: rgb(102, 102, 102);
+    color: white;
+}
+
+.card-hover {
+    border: 1px solid rgb(107, 107, 208) !important;
+    background-color: rgb(137, 137, 137) !important;
+}

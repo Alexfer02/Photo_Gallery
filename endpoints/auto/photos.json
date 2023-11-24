@@ -1,0 +1,68 @@
+{
+    "getAll": {
+        "route": "/photos",
+        "method": "GET",
+        "sql": "SELECT * FROM Photos",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all Photos"
+    },
+    "getById": {
+        "route": "/photos/$photoId",
+        "method": "GET",
+        "sql": "SELECT * FROM Photos WHERE photoId = $photoId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'Photos' by its primary key"
+    },
+    "create": {
+        "route": "/photos",
+        "method": "POST",
+        "sql": "INSERT INTO Photos(title, description, date, url, visibility, userId) VALUES ($title, $description, $date, $url, $visibility, $userId)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'Photos'",
+        "request_body_params": [
+            "title",
+            "description",
+            "date",
+            "url",
+            "visibility",
+            "userId"
+        ]
+    },
+    "update": {
+        "route": "/photos/$photoId",
+        "method": "PUT",
+        "sql": "UPDATE Photos SET title = $title, description = $description, date = $date, url = $url, visibility = $visibility, userId = $userId WHERE photoId = $photoId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'Photos' by its primary key",
+        "request_body_params": [
+            "title",
+            "description",
+            "date",
+            "url",
+            "visibility",
+            "userId"
+        ]
+    },
+    "delete": {
+        "route": "/photos/$photoId",
+        "method": "DELETE",
+        "sql": "DELETE FROM Photos WHERE photoId = $photoId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'Photos' by its primary key"
+    }
+}

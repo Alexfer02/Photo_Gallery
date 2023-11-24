@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register a new user</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
+    <script src="js/libs/axios.min.js"></script>
+
+    <script src="js/register.js" type="module"></script>
+</head>
+
+<body class="dark">
+    <div id="page-header"></div>
+
+    <div class="container">
+        <h1 class="centered">Register a new user</h1>
+
+        <div id="errors"></div>
+
+        <form id="register-form">
+            <div class="row">
+                <div class="col-md">
+
+                    <div class="form-floating">
+                        <input class="form-control" type="text" name="firstName" id="firstName-input"
+                            placeholder="First name">
+                        <label class="form-label" for="firstName-input">First name</label>
+                    </div>
+
+                </div>
+
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input class="form-control" type="text" name="lastName" id="lastName-input"
+                            placeholder="Last name">
+                        <label class="form-label" for="lastName-input">Last name</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <label class="form-label" for="email-input">Email:</label>
+                    <input class="form-control" type="email" name="email" id="email-input">
+                </div>
+
+                <div class="col-md">
+                    <label class="form-label" for="telephone-input">Phone:</label>
+
+                    <div class="input-group">
+                        <select class="form-select" name="phone-prefix" id="phone-prefix-input">
+                            <option value="34" selected>España (+34)</option>
+                            <option value="1">EE.UU. (+1)</option>
+                            <option value="46">U.K. (+46)</option>
+                        </select>
+
+                        <input class="form-control" type="text" name="telephone" id="telephone-input">
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <label class="form-label" for="username-input">Username:</label>
+                    <input class="form-control" type="text" name="username" id="username-input">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <label class="form-label" for="password-input">Password:</label>
+                    <input class="form-control" type="password" name="password" id="password-input">
+                </div>
+
+                <div class="col-md">
+                    <label class="form-label" for="password2-input">Repeat password:</label>
+                    <input class="form-control" type="password" name="password2" id="password2-input">
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        include("header.html", "#page-header");
+    </script>
+</body>
+
+</html>

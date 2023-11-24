@@ -1,0 +1,64 @@
+{
+    "getAll": {
+        "route": "/votes",
+        "method": "GET",
+        "sql": "SELECT * FROM Votes",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all Votes"
+    },
+    "getById": {
+        "route": "/votes/$voteId",
+        "method": "GET",
+        "sql": "SELECT * FROM Votes WHERE voteId = $voteId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'Votes' by its primary key"
+    },
+    "create": {
+        "route": "/votes",
+        "method": "POST",
+        "sql": "INSERT INTO Votes(value, date, userId, photoId) VALUES ($value, $date, $userId, $photoId)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'Votes'",
+        "request_body_params": [
+            "value",
+            "date",
+            "userId",
+            "photoId"
+        ]
+    },
+    "update": {
+        "route": "/votes/$voteId",
+        "method": "PUT",
+        "sql": "UPDATE Votes SET value = $value, date = $date, userId = $userId, photoId = $photoId WHERE voteId = $voteId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'Votes' by its primary key",
+        "request_body_params": [
+            "value",
+            "date",
+            "userId",
+            "photoId"
+        ]
+    },
+    "delete": {
+        "route": "/votes/$voteId",
+        "method": "DELETE",
+        "sql": "DELETE FROM Votes WHERE voteId = $voteId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'Votes' by its primary key"
+    }
+}

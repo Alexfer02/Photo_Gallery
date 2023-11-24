@@ -1,0 +1,70 @@
+{
+    "getAll": {
+        "route": "/users",
+        "method": "GET",
+        "sql": "SELECT * FROM Users",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all Users"
+    },
+    "getById": {
+        "route": "/users/$userId",
+        "method": "GET",
+        "sql": "SELECT * FROM Users WHERE userId = $userId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'Users' by its primary key"
+    },
+    "create": {
+        "route": "/users",
+        "method": "POST",
+        "sql": "INSERT INTO Users(firstName, lastName, telephone, email, username, password, avatarUrl) VALUES ($firstName, $lastName, $telephone, $email, $username, $password, $avatarUrl)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'Users'",
+        "request_body_params": [
+            "firstName",
+            "lastName",
+            "telephone",
+            "email",
+            "username",
+            "password",
+            "avatarUrl"
+        ]
+    },
+    "update": {
+        "route": "/users/$userId",
+        "method": "PUT",
+        "sql": "UPDATE Users SET firstName = $firstName, lastName = $lastName, telephone = $telephone, email = $email, username = $username, password = $password, avatarUrl = $avatarUrl WHERE userId = $userId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'Users' by its primary key",
+        "request_body_params": [
+            "firstName",
+            "lastName",
+            "telephone",
+            "email",
+            "username",
+            "password",
+            "avatarUrl"
+        ]
+    },
+    "delete": {
+        "route": "/users/$userId",
+        "method": "DELETE",
+        "sql": "DELETE FROM Users WHERE userId = $userId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'Users' by its primary key"
+    }
+}

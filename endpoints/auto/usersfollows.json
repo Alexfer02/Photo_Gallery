@@ -1,0 +1,60 @@
+{
+    "getAll": {
+        "route": "/usersfollows",
+        "method": "GET",
+        "sql": "SELECT * FROM UsersFollows",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all UsersFollows"
+    },
+    "getById": {
+        "route": "/usersfollows/$id",
+        "method": "GET",
+        "sql": "SELECT * FROM UsersFollows WHERE id = $id",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'UsersFollows' by its primary key"
+    },
+    "create": {
+        "route": "/usersfollows",
+        "method": "POST",
+        "sql": "INSERT INTO UsersFollows(followerId, followedId) VALUES ($followerId, $followedId)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'UsersFollows'",
+        "request_body_params": [
+            "followerId",
+            "followedId"
+        ]
+    },
+    "update": {
+        "route": "/usersfollows/$id",
+        "method": "PUT",
+        "sql": "UPDATE UsersFollows SET followerId = $followerId, followedId = $followedId WHERE id = $id",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'UsersFollows' by its primary key",
+        "request_body_params": [
+            "followerId",
+            "followedId"
+        ]
+    },
+    "delete": {
+        "route": "/usersfollows/$id",
+        "method": "DELETE",
+        "sql": "DELETE FROM UsersFollows WHERE id = $id",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'UsersFollows' by its primary key"
+    }
+}

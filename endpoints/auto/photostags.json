@@ -1,0 +1,60 @@
+{
+    "getAll": {
+        "route": "/photostags",
+        "method": "GET",
+        "sql": "SELECT * FROM PhotosTags",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all PhotosTags"
+    },
+    "getById": {
+        "route": "/photostags/$photoTagId",
+        "method": "GET",
+        "sql": "SELECT * FROM PhotosTags WHERE photoTagId = $photoTagId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'PhotosTags' by its primary key"
+    },
+    "create": {
+        "route": "/photostags",
+        "method": "POST",
+        "sql": "INSERT INTO PhotosTags(photoId, tagId) VALUES ($photoId, $tagId)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'PhotosTags'",
+        "request_body_params": [
+            "photoId",
+            "tagId"
+        ]
+    },
+    "update": {
+        "route": "/photostags/$photoTagId",
+        "method": "PUT",
+        "sql": "UPDATE PhotosTags SET photoId = $photoId, tagId = $tagId WHERE photoTagId = $photoTagId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'PhotosTags' by its primary key",
+        "request_body_params": [
+            "photoId",
+            "tagId"
+        ]
+    },
+    "delete": {
+        "route": "/photostags/$photoTagId",
+        "method": "DELETE",
+        "sql": "DELETE FROM PhotosTags WHERE photoTagId = $photoTagId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'PhotosTags' by its primary key"
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "getAll": {
+        "route": "/tags",
+        "method": "GET",
+        "sql": "SELECT * FROM Tags",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all Tags"
+    },
+    "getById": {
+        "route": "/tags/$tagId",
+        "method": "GET",
+        "sql": "SELECT * FROM Tags WHERE tagId = $tagId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'Tags' by its primary key"
+    },
+    "create": {
+        "route": "/tags",
+        "method": "POST",
+        "sql": "INSERT INTO Tags(name) VALUES ($name)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'Tags'",
+        "request_body_params": [
+            "name"
+        ]
+    },
+    "update": {
+        "route": "/tags/$tagId",
+        "method": "PUT",
+        "sql": "UPDATE Tags SET name = $name WHERE tagId = $tagId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'Tags' by its primary key",
+        "request_body_params": [
+            "name"
+        ]
+    },
+    "delete": {
+        "route": "/tags/$tagId",
+        "method": "DELETE",
+        "sql": "DELETE FROM Tags WHERE tagId = $tagId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'Tags' by its primary key"
+    }
+}

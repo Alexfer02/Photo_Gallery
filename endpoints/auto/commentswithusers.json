@@ -1,0 +1,12 @@
+{
+    "getAll": {
+        "route": "/commentswithusers",
+        "method": "GET",
+        "sql": "SELECT * FROM CommentsWithUsers",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all CommentsWithUsers"
+    }
+}

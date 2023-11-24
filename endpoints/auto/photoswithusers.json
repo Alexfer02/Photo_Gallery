@@ -1,0 +1,12 @@
+{
+    "getAll": {
+        "route": "/photoswithusers",
+        "method": "GET",
+        "sql": "SELECT * FROM PhotosWithUsers",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all PhotosWithUsers"
+    }
+}
